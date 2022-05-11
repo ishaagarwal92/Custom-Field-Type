@@ -1,0 +1,18 @@
+ <?php
+
+use Drupal\Core\Entity\EntityTypeInterface;
+use \Drupal\Core\Field\BaseFieldDefinition;
+
+function client_urls_entity_base_field_info(EntityTypeInterface $entity_type) {
+	$fields['ClientUrls'] = BaseFieldDefinition::create('ClientUrls')
+							->setLabel(t('Client URLs list'))
+							->setDisplayOptions('form', array(
+								'settings' => array(
+								'display_label' => TRUE,
+								),
+								))
+							->setDisplayConfigurable('form', TRUE)
+							->setDisplayConfigurable('view', TRUE);
+	return $fields;
+  
+}
